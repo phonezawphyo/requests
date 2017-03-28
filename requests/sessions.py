@@ -667,14 +667,14 @@ class Session(SessionRedirectMixin):
 
             # Look for requests environment configuration and be compatible
             # with cURL.
-            if verify is True or verify is None:
-                verify = (os.environ.get('REQUESTS_CA_BUNDLE') or
-                          os.environ.get('CURL_CA_BUNDLE'))
+            #if verify is True or verify is None:
+            #    verify = (os.environ.get('REQUESTS_CA_BUNDLE') or
+            #              os.environ.get('CURL_CA_BUNDLE'))
 
         # Merge all the kwargs.
         proxies = merge_setting(proxies, self.proxies)
         stream = merge_setting(stream, self.stream)
-        verify = merge_setting(verify, self.verify)
+        #verify = merge_setting(verify, self.verify)
         cert = merge_setting(cert, self.cert)
 
         return {'verify': verify, 'proxies': proxies, 'stream': stream,
